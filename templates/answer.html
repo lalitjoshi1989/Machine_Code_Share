@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ask Questions - RAG Demo</title>
+</head>
+<body>
+    <h2>Ask Questions from Your Uploaded PDF</h2>
+    <form method="POST">
+        <input type="text" name="question" placeholder="Type your question..." required size="50">
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if answer %}
+        <h3>Answer:</h3>
+        <p>{{ answer }}</p>
+    {% endif %}
+</body>
+</html>

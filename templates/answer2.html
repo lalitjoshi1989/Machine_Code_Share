@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ask Questions - RAG Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .chat-container {
+            background-color: #1e272e;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .robot-image {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #f1f1f1;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin-left: 10px;
+            background-color: #0abde3;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0984e3;
+        }
+
+        .answer-section {
+            margin-top: 20px;
+            background-color: #2f3640;
+            padding: 20px;
+            border-radius: 10px;
+            color: #dcdde1;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Robot Thinking" class="robot-image">
+        <h2>Ask Questions from Your Uploaded PDF</h2>
+        <form method="POST">
+            <input type="text" name="question" placeholder="Type your question..." required>
+            <button type="submit">Ask</button>
+        </form>
+
+        {% if answer %}
+            <div class="answer-section">
+                <h3>Answer:</h3>
+                <p>{{ answer }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload PDF - RAG Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .upload-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed #aaa;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357abd;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h2>Upload your PDF</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="pdf" accept="application/pdf" required>
+            <br><br>
+            <button type="submit">Upload and Proceed</button>
+        </form>
+    </div>
+</body>
+</html>
